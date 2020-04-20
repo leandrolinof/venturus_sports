@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Venturus Sports</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+		<link rel="stylesheet" href="assets/css/all.min.css">	
+		<link rel="stylesheet" href="assets/css/solid.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="area-cabecalho">			
+				<div id="area-logo">
+					<h1>
+						<i class="far fa-question-circle"></i>
+						Venturus Sports
+					</h1>
+				</div>
+
+				<div id="area-dropdown">
+					<div class="dropdown">
+						<span>JB</span>
+
+					    <button class="dropbtn">Jason Bourne 
+					      <i class="fa fa-angle-down"></i>
+					    </button>
+						
+						<div class="dropdown-content">
+						    <a href="#">Friends List</a>
+						    <a href="#">Saved Items</a>
+						    <a href="#">Notifications</a>
+						    <a href="#">User Preferences</a>
+						    <p>_____________________</p>
+						    <a href="#">Logout</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+			<div id="area-breadcrumb">
+				<ul class="breadcrumb">
+					<li><a href="#"><i class="fas fa-home"></i></a></li>
+				    <li><a href="#">Page Name</a></li>
+				    <li><a href="#"> ... </a></li>
+				    <li>Current Page</li>
+				</ul>
+			</div>
+
+
+			<div id="area-program">
+				<div>
+					<i class="fas fa-puzzle-piece"></i>
+					<p id="sport">Sport Type</p>
+					<p id="cycling">Cycling</p>
+				</div>
+
+				<div>
+					<i class="fas fa-trophy"></i>
+					<p id="mode">Mode</p>
+					<p id="advanced">Advanced</p>
+				</div>
+
+				<div>
+					<i class="fas fa-map-signs"></i>
+					<p id="route">Route</p>
+					<p id="miles">30 miles</p>
+				</div>
+			</div>
+
+
+			<div id="area-table">
+				<div id="area-table-head">
+					<div id="area-users" class="pesquisa">
+						<h2>Users</h2>
+					</div>
+
+					<div id="area-traco" class="pesquisa"></div>
+
+					<div class="pesquisa" id="area-search">
+						<input type="text" id="inputSearch" placeholder="Filter table content">
+					</div>
+				</div>
+
+				<table>
+					<thead>
+                        <tr>
+                        	<th>Username</th>
+                        	<th>Name</th>
+                        	<th>E-mail</th>
+                        	<th>City</th>
+                        	<th>Ride in group</th>
+                        	<th>Day of the week</th>
+                        	<th>Posts</th>
+                        	<th>Albums</th>
+                        	<th>Photos</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    	<tr>
+                    		<td>Teste</td>
+                    		<td>Teste</td>
+                    		<td>Teste</td>
+                    		<td>Teste</td>
+                    		<td>Teste</td>
+                    		<td>Teste</td>
+                    		<td>Teste</td>
+                    		<td>Teste</td>
+                    		<td>Teste</td>
+                    	</tr>
+
+                    	<tr>
+                    		<td>Teste2</td>
+                    		<td>Teste2</td>
+                    		<td>Teste2</td>
+                    		<td>Teste2</td>
+                    		<td>Teste2</td>
+                    		<td>Teste2</td>
+                    		<td>Teste2</td>
+                    		<td>Teste2</td>
+                    		<td>Teste2</td>
+                    	</tr>
+
+                    	<tr>
+                    		<td>Teste3</td>
+                    		<td>Teste3</td>
+                    		<td>Teste3</td>
+                    		<td>Teste3</td>
+                    		<td>Teste3</td>
+                    		<td>Teste3</td>
+                    		<td>Teste3</td>
+                    		<td>Teste3</td>
+                    		<td>Teste3</td>
+                    	</tr>
+                    </tbody>
+				</table>
+			</div>
+
+
+			<div id="area-registration">
+				<div id="area-reg">
+					<div class="reg">
+						<h2>Registration</h2>
+					</div>
+
+					<div id="area-traco2" class="pesquisa"></div>
+				</div>
+			</div>
+
+
+			<div id="area-texts">
+				<div>
+					<h3 id="need">Need Help?</h3>
+					<i class="far fa-life-ring"></i>
+					<p id="help">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+
+				<div>
+					<h3 id="why">Why Register?</h3>
+					<i class="fas fa-heartbeat"></i>
+					<p id="why-register">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+
+				<div>
+					<h3>What people are saying...</h3>
+					<i class="far fa-smile"></i>
+					<p id="what-people">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+			</div>
+
+			<p id="linha-baixo">___________________________________________________________________________________________________
+			</p>
+
+			<div id="area-form">
+				<form enctype="multipart/form-data" id="cadFuncSCracha" method="POST" data-toggle="validator">
+					<section class="container row">
+						<div>
+							<label for="inputUserName">Username</label><br>
+		                    <input class="input" type="text" id="inputUserName" name="inputUserName" value="leandro"><br>
+		                    <p id="instructions">Instructions to show on input focus</p>
+
+							<label for="inputName">Name</label><br>
+		                    <input class="input" type="text" id="inputName" name="inputName" value="Leandro Lino"><br><br><br>
+
+							<label for="inputMail">E-mail</label><br>
+		                    <input class="input" type="text" id="inputMail" name="inputMail" value="leandrolinof@gmail.com"><br><br><br>
+
+		                    <input class="save" type="submit" value="Save">
+		  					<input class="discard" type="submit" value="Discard">
+	  					</div>
+
+	  					<div>
+							<label for="inputCity">City</label>
+							<label id="inputOptional" for="inputCity">optional</label><br>
+		                    <input class="input" type="text" id="inputCity" name="inputCity" value="leandro"><br><br><br>
+
+							<input class="radio" type="radio" id="always" value="1" name="whatever">
+							<label class="label-radio" for="male">Always</label>
+							<input class="radio" type="radio" id="sometimes" value="2" name="whatever">
+							<label class="label-radio" for="female">Sometimes</label>
+							<input class="radio" type="radio" id="never" value="3" name="whatever">
+							<label class="label-radio" for="other">Never</label><br><br><br>
+
+							<label for="other">Days of the week</label><br>
+					        <input class="check" type="checkbox" id="sun" name="sun" value="1">
+						  	<label for="sun"> Sun</label>
+						  	<input class="check" type="checkbox" id="mon" name="mon" value="2">
+						  	<label for="mon"> Mon</label>
+						  	<input class="check" type="checkbox" id="tue" name="tue" value="3">
+						  	<label for="tue"> Tue</label>	
+						  	<input class="check" type="checkbox" id="wed" name="wed" value="3">
+						  	<label for="wed"> Wed</label>
+						  	<input class="check" type="checkbox" id="thu" name="thu" value="3">
+						  	<label for="thu"> Thu</label>
+						  	<input class="check" type="checkbox" id="fri" name="fri" value="3">
+						  	<label for="fri"> Fri</label>
+						  	<input class="check" type="checkbox" id="sat" name="sat" value="3">
+						  	<label for="sat"> Sat</label>
+	  					</div>
+  					</section>
+                </form>
+            </div>
+		</div>
+	</body>
+</html>

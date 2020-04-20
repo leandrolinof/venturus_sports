@@ -1,0 +1,387 @@
+$program_margin_top: 3.5em;
+$program_font_weight: bold;
+$program_font_size_top: 12px;
+$program_font_size: 22px;
+$margin_left: 5em;
+$div_width: 1150px;
+
+$program_margin_top_msg: 30px;
+$program_font_size_msg: 14px;
+
+$border_radius_input: 5px;
+$height_input: 32px;
+$width_input: 400px;
+
+$font_size_form_input: 12px;
+$font_size_form_label: 13px;
+
+
+* {
+	margin: 0;
+	padding: 0;	
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: arial;
+	background-color: #fff;
+}
+
+
+#area-cabecalho {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+
+
+	h1 {
+		margin-top: 22%;
+		font-size: 1em;
+		margin-left: $margin_left;
+	}
+
+
+	#area-dropdown {
+	    margin-left: auto;
+
+		.dropbtn {
+		  margin-right: 3em;
+		  font-size: 12px;
+		  border: none;
+		  background-color: inherit;
+		}
+
+		.dropdown {
+		  position: relative;
+		  display: inline-block;
+		  float: right;
+		  margin-top: 25%;
+
+		  span {
+		  	  border-radius: 100%; 
+		  	  border: 1px solid black; 
+		  	  font-size: 1.2em;
+		  	  margin-right: 5px;
+		  }
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  min-width: 160px;
+		  right: 0;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		  font-size: 12px;
+		}
+
+		.dropdown-content a {
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+
+		.dropdown:hover .dropdown-content {display: block;}
+	}
+}
+
+
+
+
+#area-breadcrumb {
+	ul.breadcrumb {
+	    background-color: #eee;
+	    margin-left: $margin_left;
+	    margin-top: 1%;
+	    margin-bottom: 1%;
+	}
+	ul.breadcrumb li {
+		display: inline;
+	  	font-size: 12px;
+	}
+	ul.breadcrumb li+li:before {
+	    padding: 10px;
+      	font-family: "Font Awesome\ 5 Free";
+      	content: "\f105";
+      	font-weight:900;
+      	color: gray;
+	}
+	ul.breadcrumb li a {
+	    color: #0275d8;
+	  	text-decoration: none;
+	}
+	ul.breadcrumb li a:hover {
+	    color: #01447e;
+	  	text-decoration: underline;
+	}
+}
+
+
+
+#area-program {
+	display: flex;
+
+  	i {
+		margin-left: 2.3em;
+	    display: block;
+	    float: left;
+	    margin-right: 10px;
+	    width: 50px;
+	    height: 100%;
+	    font-size: 38px;
+	    margin-top: 1em;
+  	}
+
+	div {
+		width: 19%;
+		margin-bottom: 2em;
+	
+		#sport {
+			margin-top: $program_margin_top;
+			font-size: $program_font_size_top;
+		}
+
+		#cycling {
+			font-size: $program_font_size;
+			font-weight: $program_font_weight;
+		}
+
+		#mode {
+			margin-top: $program_margin_top;
+			font-size: $program_font_size_top;
+		}
+
+		#advanced {
+			font-size: 21px;
+			font-weight: $program_font_weight;
+		}
+
+		#route {
+			margin-top: $program_margin_top;
+			font-size: $program_font_size_top;
+		}
+
+		#miles {
+			font-size: $program_font_size;
+			font-weight: $program_font_weight;
+		}
+	}
+}
+
+
+#area-table {
+    margin-left: $margin_left;
+	width: $div_width;
+
+	table {
+		border-collapse: collapse;
+        width: $div_width;	
+	}
+
+	th, td {
+		padding: 8px;
+		text-align: left;
+		border-bottom: 1px solid #ddd;
+	}
+
+	th {
+		font-size: 12px;
+	}
+
+	td {
+		font-size: 11px;
+	}
+
+	tr:hover {background-color:#f5f5f5;}
+
+	#area-table-head {
+		.pesquisa {
+			float: left;
+		}
+
+    	input[type='text'] {
+    		background-image: url(../images/icon_search.png);
+    		background-repeat: no-repeat;
+    		background-position: left;
+    		background-size: 1em;
+    	}
+
+    	#inputSearch {
+    		height:32px;
+  			width:280px;
+  			border-radius: $border_radius_input;
+  			padding: 12px 16px 14px;
+    	}
+
+    	#area-users {
+			width: 150px;
+			margin-bottom: 45px;
+    	}
+
+ 		#area-traco {
+ 			border-bottom: inset;
+		    width: 630px;
+		    margin-top: 15px;
+		    margin-right: 90px;
+ 		}  	
+	}
+}
+
+
+#area-registration {
+	margin-left: $margin_left;
+	margin-top: 5em;
+    width: $div_width;
+
+    display: flex;
+
+	#area-reg {
+		.reg {
+			float: left;
+			width: 200px;
+		}
+	}
+
+	#area-traco2 {
+		border-bottom: inset;
+	    width: 650px;
+	    margin-top: 15px;
+	    width: 950px;
+	    float: right;
+	}
+}
+
+
+#area-messages {
+	margin-left: $margin_left;
+	display: flex;
+	width: $div_width;
+
+  	h3 {
+	    display: block;
+	    float: left;
+	    margin-right: 350px;
+	    width: 50px;
+	    height: 100%;
+	    font-size: 20px;
+	    margin-top: 15px;
+  	}
+}
+
+
+#area-texts {
+	margin-left: $margin_left;
+	display: flex;
+	width: $div_width;
+	margin-top: 25px;
+
+  	i {
+	    display: block;
+	    float: left;
+	    margin-right: 25px;
+	    width: 50px;
+	    height: 100%;
+	    font-size: 60px;
+	    margin-top: 17px;
+  	}
+
+	div {
+		#help {
+			margin-top: $program_margin_top_msg;
+			font-size: $program_font_size_msg;
+		}
+
+		#why-register {
+			margin-top: $program_margin_top_msg;
+			font-size: $program_font_size_msg;
+		}
+
+		#what-people {
+			margin-top: $program_margin_top_msg;
+			font-size: $program_font_size_msg;
+		}
+	}
+}
+
+
+#linha-baixo {
+	margin-left: 13em;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    width: 950px;
+}
+
+
+#area-form {
+	margin-left: 13em;
+	width: 880px;
+	margin-bottom: 150px;
+
+	#instructions {
+		font-size: 11px;
+	}
+
+	.input {
+		width: $width_input;
+		font-size: $font_size_form_input;
+		height: $height_input;
+		border-radius: $border_radius_input;
+	}
+
+	label {
+		font-size: $font_size_form_label;
+	}
+
+	.radio {
+	   height: 25px;
+	   width: 25px;
+	   display: inline-block;
+	   cursor: pointer;
+	   vertical-align: middle;
+	   border-radius: 100%;
+	}
+
+	.label-radio {
+	   margin-right: 30px;
+	}
+
+	.check {
+	   height: 21px;
+	   width: 21px;
+	   display: inline-block;
+	   cursor: pointer;
+	   vertical-align: middle;
+	   border-radius: 100%;
+	}
+
+	.save {
+		width: 65px;
+		height: 30px;
+		border-radius: 5px;
+	}
+
+	.discard {
+		width: 80px;
+		height: 30px;
+		border-radius: 5px;
+	}
+
+	.row {
+		flex-direction: row;
+	}
+
+	.container {
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#inputOptional {
+		float: right;
+		font-size: 11px;
+	}
+}
