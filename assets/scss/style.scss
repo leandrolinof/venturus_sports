@@ -15,6 +15,12 @@ $width_input: 400px;
 $font_size_form_input: 12px;
 $font_size_form_label: 13px;
 
+$area-text-color: #1cb89a;
+$area-text-fontweight: 40;
+
+$h3-font-weight: 10;
+$h3-font-size: 30px;
+
 
 * {
 	margin: 0;
@@ -29,6 +35,30 @@ body {
 }
 
 
+i {
+	color: #1cb89a;
+}
+
+
+h3 {
+	font-weight: $h3-font-weight;
+	font-size: $h3-font-size;
+}
+
+
+input {
+	border-width: thin; 
+}
+	//input:active {border-color: green !important; outline:none !important;} 
+	//input:active {background: none !important}
+
+.btnDelete {
+  	font-family: "Font Awesome\ 5 Free";
+  	content: "\f2ed";
+    display: none;
+}
+
+
 #area-cabecalho {
     left: 0;
     top: 0;
@@ -38,9 +68,30 @@ body {
 
 
 	h1 {
-		margin-top: 22%;
+		margin-top: 15%;
 		font-size: 1em;
 		margin-left: $margin_left;
+	}
+
+
+	#area-logo {
+		width: 300px;
+
+		#div-logo {
+			border-radius: 7px;
+		    float: left;
+		    padding: 7px;
+		    background-color: $area-text-color;
+		    margin-left: $margin_left;
+		    margin-top: 10%;
+		    margin-right: 7px;
+		}
+
+
+		#logo {
+			color: #fff;
+			font-size: 25px;
+		}
 	}
 
 
@@ -48,44 +99,61 @@ body {
 	    margin-left: auto;
 
 		.dropbtn {
-		  margin-right: 3em;
-		  font-size: 12px;
-		  border: none;
-		  background-color: inherit;
+		    margin-right: 5em;
+		    font-size: 12px;
+		    border: none;
+		    background-color: inherit;
+
+
+		       #jb-angle-down {
+			       color: black;
+			       font-weight: bold;
+			       font-size: 15px;
+			       margin-left: 10px;
+			   }
 		}
 
-		.dropdown {
-		  position: relative;
-		  display: inline-block;
-		  float: right;
-		  margin-top: 25%;
 
-		  span {
-		  	  border-radius: 100%; 
-		  	  border: 1px solid black; 
-		  	  font-size: 1.2em;
-		  	  margin-right: 5px;
-		  }
+		.dropdown {
+			position: relative;
+			display: inline-block;
+			float: right;
+			margin-top: 25%;
+
+		    span {
+		  	    border-radius: 100%; 
+		  	    border: 1px solid black; 
+		  	  	font-size: 1.2em;
+		  	  	margin-right: 5px;
+		    }
 		}
 
 		.dropdown-content {
-		  display: none;
-		  position: absolute;
-		  min-width: 160px;
-		  right: 0;
-		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		  z-index: 1;
-		  font-size: 12px;
+		    display: none;
+		  	position: absolute;
+		  	min-width: 160px;
+		  	right: 0;
+		   	background-color: #f9f9f9;
+		  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  	z-index: 1;
+		  	font-size: 12px;
 		}
 
 		.dropdown-content a {
-		  color: black;
-		  padding: 12px 16px;
-		  text-decoration: none;
-		  display: block;
+  		    color: black;
+  		    padding: 12px 16px;
+		  	text-decoration: none;
+		  	display: block;
 		}
 
-		.dropdown:hover .dropdown-content {display: block;}
+		.dropdown-content  a:hover, 
+		.dropdown-content a.focus {
+		    color: $area-text-color;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
 	}
 }
 
@@ -93,11 +161,17 @@ body {
 
 
 #area-breadcrumb {
+	width: 100%;
+
+	i {
+	    margin-left: 5.8em;
+	}
+
+
 	ul.breadcrumb {
-	    background-color: #eee;
-	    margin-left: $margin_left;
+	    background-color: #fafaf9;
 	    margin-top: 1%;
-	    margin-bottom: 1%;
+	    padding: 10px 16px;
 	}
 	ul.breadcrumb li {
 		display: inline;
@@ -108,14 +182,15 @@ body {
       	font-family: "Font Awesome\ 5 Free";
       	content: "\f105";
       	font-weight:900;
-      	color: gray;
+      	color: #9f9fa0;
+      	font-size: 18px;
 	}
 	ul.breadcrumb li a {
-	    color: #0275d8;
+	    color: black;
 	  	text-decoration: none;
 	}
 	ul.breadcrumb li a:hover {
-	    color: #01447e;
+	    color: #1cb89a;
 	  	text-decoration: underline;
 	}
 }
@@ -124,6 +199,8 @@ body {
 
 #area-program {
 	display: flex;
+	background-color: #baeae1;
+	width: 100%;
 
   	i {
 		margin-left: 2.3em;
@@ -176,16 +253,20 @@ body {
 #area-table {
     margin-left: $margin_left;
 	width: $div_width;
+	margin-top: 50px;
 
 	table {
 		border-collapse: collapse;
-        width: $div_width;	
+        width: $div_width;
+        overflow-x:auto;
 	}
 
 	th, td {
 		padding: 8px;
 		text-align: left;
-		border-bottom: 1px solid #ddd;
+		//border-bottom: 1px solid #ddd;
+		cursor: pointer;
+		padding-bottom: 20px;
 	}
 
 	th {
@@ -194,9 +275,17 @@ body {
 
 	td {
 		font-size: 11px;
+		padding-top: 20px;
+
+		.td-color {
+			color: $area-text-color;
+		}
 	}
 
 	tr:hover {background-color:#f5f5f5;}
+	tr:nth-child(even) {background-color: #f2f2f2;}
+
+	tr:hover .btnDelete {display: block};
 
 	#area-table-head {
 		.pesquisa {
@@ -219,7 +308,7 @@ body {
 
     	#area-users {
 			width: 150px;
-			margin-bottom: 45px;
+			margin-bottom: 35px;
     	}
 
  		#area-traco {
@@ -288,6 +377,13 @@ body {
 	    font-size: 60px;
 	    margin-top: 17px;
   	}
+
+
+  	h3 {
+		color: $area-text-color;
+		font-weight: $area-text-fontweight;
+  	}
+
 
 	div {
 		#help {
