@@ -8,9 +8,7 @@
 		<link rel="stylesheet" href="assets/css/solid.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-		<script type="text/javascript" src="assets/js/jquery-3.5.0.min.js">
-			
-		</script>
+		<script type="text/javascript" src="assets/js/jquery-3.5.0.min.js"></script>
 	</head>
 
 	<body>
@@ -87,7 +85,7 @@
 					<div id="area-traco" class="pesquisa"></div>
 
 					<div class="pesquisa" id="area-search">
-						<input type="text" id="inputSearch" placeholder="Filter table content">
+						<input type="text" id="inputSearch" onkeyup="TableSearch()" placeholder="Filter table content">
 					</div>
 				</div>
 
@@ -98,27 +96,13 @@
                         	<th>Name</th>
                         	<th>E-mail</th>
                         	<th>City</th>
-                        	<!--<th>Ride in group</th>
+                        	<th>Ride in group</th>
                         	<th>Day of the week</th>
-                        	<th>Posts</th>-->
+                        	<th>Posts</th>
                         	<th>Albums</th>
-                        	<!--<th>Photos</th>-->
+                        	<th>Photos</th>
                         </tr>
                     </thead>
-
-                    <!--<tbody>
-                    	<tr>
-                    		<td class="td-username"></td>
-                    		<td class="td-name"></td>
-                    		<td class="td-mail"></td>
-                    		<td class="td-city"></td>
-                    		<td class="td-ride"></td>
-                    		<td class="td-day"></td>
-                    		<td class="td-posts"></td>
-                    		<td class="td-albuns"></td>
-                    		<td class="td-photos"></td>
-                    	</tr>
-                    </tbody>-->
 				</table>
 			</div>
 
@@ -158,27 +142,27 @@
 			</p>
 
 			<div id="area-form">
-				<form enctype="multipart/form-data" id="cadFuncSCracha" method="POST" data-toggle="validator">
-					<section class="container row">
+				<form enctype="multipart/form-data" method="POST" data-toggle="validator">
+					<section class="container">
 						<div>
 							<label for="inputUserName">Username</label><br>
-		                    <input class="input" type="text" id="inputUserName" name="inputUserName" value="leandro"><br>
+		                    <input autofocus class="input" type="text" id="inputUserName" name="inputUserName" value=""><br>
 		                    <p id="instructions">Instructions to show on input focus</p>
 
 							<label for="inputName">Name</label><br>
-		                    <input class="input" type="text" id="inputName" name="inputName" value="Leandro Lino"><br><br><br>
+		                    <input class="input" type="text" id="inputName" name="inputName" value=""><br><br><br>
 
 							<label for="inputMail">E-mail</label><br>
-		                    <input class="input" type="text" id="inputMail" name="inputMail" value="leandrolinof@gmail.com"><br><br><br>
+		                    <input class="input" type="text" id="inputMail" name="inputMail" value=""><br><br><br>
 
 		                    <input id="btnSave" class="save" type="submit" value="Save">
-		  					<input id="btnDiscard" class="discard" value="Discard">
+		  					<input id="btnDiscard" class="discard" type="button" value="Discard">
 	  					</div>
 
 	  					<div>
 							<label for="inputCity">City</label>
 							<label id="inputOptional" for="inputCity">optional</label><br>
-		                    <input class="input" type="text" id="inputCity" name="inputCity" value="leandro"><br><br><br>
+		                    <input class="input" type="text" id="inputCity" name="inputCity" value=""><br><br><br>
 
 							<input id="inputRadio1" class="radio" checked type="radio" id="always" value="1" name="whatever">
 							<label class="label-radio" for="male">Always</label>
@@ -188,19 +172,19 @@
 							<label class="label-radio" for="other">Never</label><br><br><br>
 
 							<label for="other">Days of the week</label><br>
-					        <input id="inputCheck1" class="check" type="checkbox" id="sun" name="sun" value="1">
+					        <input id="inputCheck1" class="check" type="checkbox" id="sun" name="day_week[]" value="Sun">
 						  	<label for="sun"> Sun</label>
-						  	<input id="inputCheck2"  class="check" type="checkbox" id="mon" name="mon" value="2">
+						  	<input id="inputCheck2"  class="check" type="checkbox" id="mon" name="day_week[]" value="Mon">
 						  	<label for="mon"> Mon</label>
-						  	<input id="inputCheck3"  class="check" type="checkbox" id="tue" name="tue" value="3">
+						  	<input id="inputCheck3"  class="check" type="checkbox" id="tue" name="day_week[]" value="Tue">
 						  	<label for="tue"> Tue</label>	
-						  	<input id="inputCheck4"  class="check" type="checkbox" id="wed" name="wed" value="3">
+						  	<input id="inputCheck4"  class="check" type="checkbox" id="wed" name="day_week[]" value="Wed">
 						  	<label for="wed"> Wed</label>
-						  	<input id="inputCheck5"  class="check" type="checkbox" id="thu" name="thu" value="3">
+						  	<input id="inputCheck5"  class="check" type="checkbox" id="thu" name="day_week[]" value="Thu">
 						  	<label for="thu"> Thu</label>
-						  	<input id="inputCheck6"  class="check" type="checkbox" id="fri" name="fri" value="3">
+						  	<input id="inputCheck6"  class="check" type="checkbox" id="fri" name="day_week[]" value="Fri">
 						  	<label for="fri"> Fri</label>
-						  	<input id="inputCheck7"  class="check" type="checkbox" id="sat" name="sat" value="3">
+						  	<input id="inputCheck7"  class="check" type="checkbox" id="sat" name="day_week[]" value="Sat">
 						  	<label for="sat"> Sat</label>
 	  					</div>
   					</section>
@@ -208,161 +192,6 @@
             </div>
 		</div>
 
-		<script type="text/javascript">
-			var vUsers;
-			var vAlbums;
-			var albumCount;
-			var length;
-			var table = document.getElementById('table-venturus');
-
-
-			$(document).ready(function() {
-            	$.ajax({ url: 'https://jsonplaceholder.typicode.com/users',
-	            		async: true,
-	                    success: function(data1) {
-	                     	vUsers = data1;
-
-							vUsers.forEach((line) => {
-							    var lineId   = line.id;
-							  	var tr       = document.createElement('tr');
-								var username = document.createElement('td');
-						    	var name     = document.createElement('td');    
-								var email    = document.createElement('td');    
-								var city     = document.createElement('td');
-								var tdAlbums = document.createElement('td');
-
-							    var trash    = document.createElement("td");
-
-								
-							    $.ajax({url: 'https://jsonplaceholder.typicode.com/photos',
-										async: true,
-					                    success: function(data2) {
-					                    	//vAlbums = data2; 
-					                    	callback(data2);
-											
-											/*albumCount = contaAlbums(lineId);
-					                    	
-					                    	function contaAlbums(lineId) {
-						                    	length = 0; 
-
-						                    	vAlbums.forEach(function(album) {
-											        if (album.albumId == lineId) { 
-											            length++;
-											        };
-											    }.bind(vAlbums));
-
-											    albumCount = length;
-											  
-											    return length;
-											};*/
-					                    },
-					                    error: function(xhr, ajaxOptions, thrownError) {
-					                        alert(thrownError);
-
-					                        return false; 
-					                    }
-				                });
-
-
-
-
-				                function callback(resposta) {
-				                	vAlbums = resposta;
-
-
-						                    	length = 0; 
-
-						                    	vAlbums.forEach(function(album) {
-											        if (album.albumId == lineId) { 
-											            length++;
-											        }
-											    }.bind(vAlbums));
-
-											    albumCount = length;
-				               
-
-
-							    /*username.innerText = line.username;
-							    name.innerText     = line.name;
-							    email.innerText    = line.email;
-							    city.innerText     = line.address.city;
-							    tdAlbums.innerText = albumCount;
-
-							    tr.append(username, name, email, city, tdAlbums);
-							    table.append(tr);*/
-				                };
-
-
-                				username.innerText  = line.username;
-							    name.innerText      = line.name;
-							    email.innerText     = line.email;
-							    city.innerText      = line.address.city;
-							    tdAlbums.innerText  = albumCount;
-							    trash.innerHTML     = '<a onclick="excluir()" href="javascript:void(0)"><i class="far fa-trash-alt btnDelete"></i></a>';
-							        trash.onclick=function(){
-								    excluir(this);
-								    };
-
-							    tr.append(username, name, email, city, tdAlbums, trash);
-							    table.append(tr);
-								
-
-
-							}); 
-	                    },
-	                    error: function(xhr, ajaxOptions, thrownError) {
-	                        alert(thrownError);
-
-	                        return false; 
-	                    }
-                });
-
-
-   	
-
-				$('#btnSave').on('click', function() {
-				    var newRow = $("<tr>");	    
-				    var cols = "";	
-
-				    cols += '<td>'+document.getElementById("inputUserName").value+'</td>';	    
-				    cols += '<td>'+document.getElementById("inputName").value+'</td>';	    
-				    cols += '<td>'+document.getElementById("inputMail").value+'</td>';		    
-				    cols += '<td>'+document.getElementById("inputCity").value+'</td>'; 
-				    cols += '<td>0</td>';   
-				    cols += '<td>';	    
-				    cols += '<button class="far fa-trash-alt"></button>';	    
-				    cols += '</td>';	
-
-				    newRow.append(cols);	    
-				    $("#table-venturus").append(newRow);	
-				    return false;
-				});
-
-
-				$('#btnDiscard').on('click', function() {
-					document.getElementById("inputUserName").value = null;	    
-				    document.getElementById("inputName").value     = null;   
-				    document.getElementById("inputMail").value 	   = null;	    
-				    document.getElementById("inputCity").value 	   = null;	
-				    document.getElementById("inputRadio1").checked = true;
-				    document.getElementById("inputCheck1").checked = false;	
-				    document.getElementById("inputCheck2").checked = false;				
-				    document.getElementById("inputCheck3").checked = false;
-				    document.getElementById("inputCheck4").checked = false;
-				    document.getElementById("inputCheck5").checked = false;
-				    document.getElementById("inputCheck6").checked = false;
-				    document.getElementById("inputCheck7").checked = false;
-				});
-
-
-				function excluir(event) {
-					var tr = $(event.target).closest('tr');
-					tr.remove();
-				};
-            });	
-		</script>
-
-
-
+		<script type="text/javascript" src="assets/js/index.js"></script>
 	</body>
 </html>
