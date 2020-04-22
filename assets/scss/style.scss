@@ -49,7 +49,8 @@ h3 {
 input {
 	border-width: thin; 
 }
-
+	//input:active {border-color: green !important; outline:none !important;} 
+	//input:active {background: none !important}
 
 .btnDelete {
   	font-family: "Font Awesome\ 5 Free";
@@ -143,7 +144,6 @@ input {
   		    padding: 12px 16px;
 		  	text-decoration: none;
 		  	display: block;
-		  	display: none;
 		}
 
 		.dropdown-content  a:hover, 
@@ -264,6 +264,7 @@ input {
 	th, td {
 		padding: 8px;
 		text-align: left;
+		//border-bottom: 1px solid #ddd;
 		cursor: pointer;
 		padding-bottom: 20px;
 	}
